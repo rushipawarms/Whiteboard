@@ -1,0 +1,22 @@
+   body{
+        background: white;
+    }
+
+    *{
+        box-sizing:border-box;
+    }
+    
+    html,body{
+        padding:0px;
+        margin:0px;
+    }
+    .tools{
+        background: lightblue;
+        height: 100px;
+        width: 100%;
+    } 
+.content {
+    background: lightgoldenrodyellow;
+    width: 100%;
+    height: calc(100vh - 100px);
+    }
