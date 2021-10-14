@@ -1,6 +1,4 @@
-   body{
-        background: white;
-    }
+   
 
     *{
         box-sizing:border-box;
@@ -14,9 +12,26 @@
         background: lightblue;
         height: 100px;
         width: 100%;
+        display: flex;
+        align-items: center;
     } 
 .content {
     background: lightgoldenrodyellow;
     width: 100%;
     height: calc(100vh - 100px);
+    }
+    .tool-box{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+
+    }
+    .tool{
+        height: 50px;
+        
+
+    }
+    .tool img{
+        height: 100%;
+
     }
