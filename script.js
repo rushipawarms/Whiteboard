@@ -4,8 +4,8 @@ let mouseD=false;
 let pointsDB=[];
 let line=[];
 let redoA=[];
-// canvas.height=window.innerHeight-100;
-// canvas.width=window.innerWidth;
+
+
 let { top: canvasTop } = canvas.getBoundingClientRect();
 canvas.height = window.innerHeight - canvasTop;
 canvas.width = window.innerWidth;
@@ -15,6 +15,7 @@ window.addEventListener("resize", function () {
     drawLine();
 })
 canvas.addEventListener("mousedown", function(e){
+   
     if(redoA.length)
     {
         redoA=[];
@@ -27,11 +28,15 @@ canvas.addEventListener("mousedown", function(e){
     let poits={
         id:"md",
         x:x,
-        y:y
+        y:y,
+        color:ctx.strokeStyle,
+        lineSize:ctx.lineWidth
+        
     }
     line.push(poits);
 })
 canvas.addEventListener("mousemove", function(e){
+    
     if(mouseD==true)
     {
     let x=e.clientX;
@@ -41,7 +46,9 @@ canvas.addEventListener("mousemove", function(e){
     let poits={
         id:"mm",
         x : x,
-        y : y
+        y : y,
+        color:ctx.strokeStyle,
+        lineSize:ctx.lineWidth
     }
     line.push(poits);
     }
