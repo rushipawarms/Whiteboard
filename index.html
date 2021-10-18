@@ -11,11 +11,23 @@
 <body>
    <div class="tools">
        <div class="tool-box">
-           <div class="tool">
+           <div class="tool active-tool" id="pencil">
                <img src="./logo/Black_Pencil.svg" alt="" >
+               <div class="tool-options hide" id="pencil-options">
+                <input type="range" name="" id="pencil-size">
+                <div class="pencil-color">
+                    <div class="red"></div>
+                    <div class="yellow"></div>
+                    <div class="blue"></div>
+                    <div class="black"></div>
+                </div>
+               </div>
            </div>
-           <div class="tool">
+           <div class="tool" id="eraser">
                <img src="./logo/Eraser.svg" alt="" >
+               <div class="tool-options hide" id="eraser-options">
+                <input type="range" name="" id="eraser-size">
+               </div>
            </div>
            <div class="tool">
             <img src="./logo/StickyNote.svg" alt="" >
