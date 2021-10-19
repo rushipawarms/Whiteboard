@@ -92,7 +92,8 @@
     .sticky{
         position: absolute;
     top: 50%;
-    left: 50%
+    left: 50%;
+    width:263px
 
     }
     .sticky-header{
@@ -103,7 +104,7 @@
         justify-content: flex-end;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-
+        width: 100%;
     }
     .minimize{
         height: 20px;

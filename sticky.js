@@ -1,8 +1,7 @@
 let sticky=document.querySelector("#sticky");
 
 sticky.addEventListener("click", function(){
-    console.log("hi");
-
+  
     let sticky=document.createElement("div");
     sticky.classList.add("sticky");
 
@@ -31,7 +30,43 @@ sticky.addEventListener("click", function(){
     sticky.appendChild(stickyConent);
 
     document.body.appendChild(sticky);
+    let xinitial;
+    let yinitial;
+    stickyHold=false;
+    stickyHeader.addEventListener("mousedown",function(e){
+        stickyHold=true;
+        xinitial=e.clientX;
+        yinitial=e.clientY
+        
+    })
+    stickyHeader.addEventListener("mousemove",function(e){
+        if(stickyHold){
+            let finalX=e.clientX;
+            let finalY=e.clientY;
+
+            let dx=finalX-xinitial;
+            let dy=finalY-yinitial;
+
+            let {top,left}=sticky.getBoundingClientRect();
+
+            sticky.style.top=top+dy+"px";
+            sticky.style.left=left+dx+"px";
+
+            xinitial=finalX;
+            yinitial=finalY;
+        }
+
+    })
+    stickyHeader.addEventListener("mouseup",function(e){
+        stickyHold=false;
+    })
 
 
-    
+    minimize.addEventListener("click", function(){
+        stickyText.style.display=stickyText.style.display=="none"? "block" :"none";
+    })
+    close.addEventListener("click",function(){
+        sticky.remove();
+    })
+
 })
