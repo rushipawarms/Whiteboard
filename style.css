@@ -126,11 +126,21 @@
     }
     .sticky-content
     {
-
+      width: 100%;
     }
-    #sticky-box
+.sticky-box
     {
         outline: none;
         border: 1px solid lightgray;
+        background: lavender;
     }
+
+   .image{
+    outline: none;
+    border: 1px solid lightgray;
+  
+    width: 100%;
+    object-fit: contain;
+
+   }
     

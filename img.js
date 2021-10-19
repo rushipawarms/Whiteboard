@@ -1,7 +1,15 @@
-let sticky=document.querySelector("#sticky");
+let photoUpload=document.querySelector("#upload-photo");
 
-sticky.addEventListener("click", function(){
-  
+let upload=document.querySelector("#img");
+upload.addEventListener("click",function(){
+    photoUpload.click();
+})
+
+photoUpload.addEventListener("change", function(){
+   let path=photoUpload.files[0].path;
+
+   
+
     let sticky=document.createElement("div");
     sticky.classList.add("sticky");
 
@@ -17,12 +25,11 @@ sticky.addEventListener("click", function(){
     let stickyConent=document.createElement("div");
     stickyConent.classList.add("sticky-content");
 
-    let stickyText=document.createElement("textarea");
-    stickyText.setAttribute("class", "sticky-box");
-    stickyText.setAttribute("cols", "30");
-    stickyText.setAttribute("rows", "10");
+    let image=document.createElement("img");
+    image.setAttribute("class","image");
+    image.setAttribute("src", path);
 
-    stickyConent.appendChild(stickyText);
+    stickyConent.appendChild(image);
     stickyHeader.appendChild(minimize);
     stickyHeader.appendChild(close);
 
@@ -30,6 +37,7 @@ sticky.addEventListener("click", function(){
     sticky.appendChild(stickyConent);
 
     document.body.appendChild(sticky);
+
     let xinitial;
     let yinitial;
     stickyHold=false;
@@ -39,7 +47,7 @@ sticky.addEventListener("click", function(){
         yinitial=e.clientY
         
     })
-    stickyHeader.addEventListener("mousemove",function(e){
+    canvas.addEventListener("mousemove",function(e){
         if(stickyHold){
             let finalX=e.clientX;
             let finalY=e.clientY;
@@ -63,10 +71,11 @@ sticky.addEventListener("click", function(){
 
 
     minimize.addEventListener("click", function(){
-        stickyText.style.display=stickyText.style.display=="none"? "block" :"none";
+        image.style.display=image.style.display=="none"? "block" :"none";
     })
     close.addEventListener("click",function(){
         sticky.remove();
     })
 
+    
 })
