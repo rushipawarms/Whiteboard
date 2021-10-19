@@ -5,6 +5,17 @@ upload.addEventListener("click",function(){
     photoUpload.click();
 })
 
+let download=document.querySelector('#download');
+download.addEventListener("click",function(){
+ let filepath=canvas.toDataURL("image/png");
+ let atag=document.createElement("a");
+ atag.setAttribute("download","canvas.png");
+ atag.setAttribute("href",filepath);
+ atag.click();
+ atag.remove();
+
+})
+
 photoUpload.addEventListener("change", function(){
    let path=photoUpload.files[0].path;
 
