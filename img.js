@@ -58,7 +58,7 @@ photoUpload.addEventListener("change", function(){
         yinitial=e.clientY
         
     })
-    canvas.addEventListener("mousemove",function(e){
+    stickyHeader.addEventListener("mousemove",function(e){
         if(stickyHold){
             let finalX=e.clientX;
             let finalY=e.clientY;
